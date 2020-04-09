@@ -29,8 +29,13 @@ env: JDK=default
 
 matrix:
     include:
-        - env: JDK=11
+        - arch : amd64
+          env: JDK=11
           os: linux
+        
+         - arch : arm64
+           env: JDK=11
+           os: linux
         - env: JDK=12
           os: linux
         - env: JDK=ea
