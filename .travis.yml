@@ -1,5 +1,8 @@
 sudo: false
 dist: trusty
+arch: 
+  - amd64
+  - arm64
 
 language: java
 
