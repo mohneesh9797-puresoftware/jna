@@ -1,8 +1,6 @@
 sudo: false
 dist: trusty
 
-arch:
-  - arm64
 
 language: java
 
@@ -37,14 +35,12 @@ env: JDK=default
 
 matrix:
     include:
-        - env: JDK=11
+        - arch : amd64
+          env: JDK=11
           os: linux
-        - env: JDK=12
+        - arch: arm64
+          env: JDK=11
           os: linux
-        - env: JDK=ea
-          os: linux
-        - env: JDK=11
-          os: osx
     exclude:
         - env: JDK=default
           os: osx
