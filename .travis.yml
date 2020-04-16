@@ -21,6 +21,7 @@ script:
   - sudo apt-get install autoconf
   - sudo apt-get update -y
   - sudo apt-get install -y libc-bin
+  - ls /usr/lib/jvm/
   - JAVA_HOME="/usr/lib/jvm/openjdk"
   - export PATH=$JAVA_HOME/bin:$PATH;
   - sudo apt-get install libltdl-dev
