@@ -2,7 +2,6 @@ sudo: false
 dist: trusty
 
 arch:
-  - amd64
   - arm64
 
 language: java
@@ -21,7 +20,6 @@ script:
   - sudo apt-get install autoconf
   - sudo apt-get update -y
   - sudo apt-get install -y libc-bin
-  - ls /usr/lib/jvm/
   - JAVA_HOME="/usr/lib/jvm/openjdk"
   - export PATH=$JAVA_HOME/bin:$PATH;
   - sudo apt-get install libltdl-dev
@@ -35,10 +33,18 @@ script:
 os:
   - linux
 
+env: JDK=default
+
 matrix:
     include:
         - env: JDK=11
           os: linux
+        - env: JDK=12
+          os: linux
+        - env: JDK=ea
+          os: linux
+        - env: JDK=11
+          os: osx
     exclude:
         - env: JDK=default
           os: osx
